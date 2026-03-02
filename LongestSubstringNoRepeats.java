@@ -2,26 +2,30 @@
 /// 0 <= s.length <= 5 * 104
 /// s consists of English letters, digits, symbols and spaces.
 
-
 class Solution {
     public int lengthOfLongestSubstring(String s) {
+        int longest = 0;
         String subs = "";
-        char nextChar;
-        int longestSubstringLength = 0;
+
         for (int i = 0; i < s.length(); i++) {
-            nextChar = s.charAt(i);
-            longestSubstringLength = subs.length();
-            if (subs.contains(Character.toString(nextChar))) {
-                if (subs.length() > longestSubstringLength) {
-                    longestSubstringLength = subs.length();
+            String nextChar = Character.toString(s.charAt(i));
+            if (subs.contains(nextChar)) {
+                int index = subs.indexOf(nextChar);
+                if (subs.length() > index) {
+                    subs = subs.substring(index+1);
+                    subs += nextChar;
+                } else {
+                    subs = nextChar;
                 }
-                int lastIndexOfRepeat = subs.lastIndexOf(nextChar);
-                subs = subs.substring(lastIndexOfRepeat);
+            } else {
+                subs += nextChar;
             }
 
-            subs.concat(Character.toString(nextChar));
+            if (subs.length() > longest) {
+                longest = subs.length();
+            }
         }
 
-        return longestSubstringLength;
+        return longest;
     }
 }
