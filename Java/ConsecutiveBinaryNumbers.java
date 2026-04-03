@@ -1,3 +1,4 @@
+package Java;
 class Solution {
     public int concatenatedBinary(int n) {
         long modulo = (long) Math.pow(10,9) + 7;

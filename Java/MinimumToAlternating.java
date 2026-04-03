@@ -1,3 +1,4 @@
+package Java;
 /// Return the minimum number of operations required to swap individual letters until the sstring is alternating binary.
 /// The string is a binary string.
 

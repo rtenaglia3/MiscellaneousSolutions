@@ -1,3 +1,4 @@
+package Java;
 /// Given an n x n binary grid, in one step you can choose two adjacent rows of the grid and swap them.
 /// A grid is said to be valid if all the cells above the main diagonal are zeros.
 /// Return the minimum number of steps needed to make the grid valid, or -1 if the grid cannot be valid.
